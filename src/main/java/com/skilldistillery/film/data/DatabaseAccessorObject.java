@@ -57,7 +57,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 		Film film = null;
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
-			String sql = "SELECT film.*, language.name, category.name FROM film left JOIN language on film.language_id = language.id JOIN film_category on film.id =  film_category.film_id JOIN category on film_category.category_id = category.id WHERE film.id = ?";
+			String sql = "SELECT film.*, language.name, category.name FROM film LEFT JOIN language on film.language_id = language.id LEFT JOIN film_category on film.id = film_category.film_id LEFT JOIN category on film_category.category_id = category.id WHERE film.id = ?";
 //			String sql = "SELECT * FROM film LEFT JOIN language ON language.id = film.language_id  LEFT JOIN film_category ON film_category.film_id = film.id LEFT JOIN category ON category.id = film_category.category_id WHERE film.id =?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, filmId);
@@ -180,6 +180,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 
 	@Override
 	public boolean deleteFilm(Film film) {
+		System.out.println(film.getId() + "in deleteFilm method in DAO");
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
@@ -187,6 +188,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			String sql = "DELETE from film_actor WHERE film_id = ?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, film.getId());
+			stmt.executeUpdate();
 			sql = "DELETE FROM film WHERE id = ?";
 			stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, film.getId());
