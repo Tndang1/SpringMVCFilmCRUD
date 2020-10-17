@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
-  
+	pageEncoding="UTF-8"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,47 +12,48 @@
 </head>
 <body>
 
-<!-- display film -->
-  <c:choose>
-    <c:when test="${! empty film}">
-      <ul>
-       <li>${film.filmId}</li>
-        <li>${film.title}</li>
-        <li>${film.description}</li>
-        <li>${film.releaseYear}</li>
-        <li>${film.langId}</li>
-        <li>${film.rentalDuration}</li>
-        <li>${film.rentalRate}</li>
-        <li>${film.length}</li>
-        <li>${film.replacementCost}</li>
-        <li>${film.rating}</li>
-        <li>${film.specialFeatures}</li>
-        <li>${film.language}</li>
-        <li>${film.specialFeatures}</li>
-        
-      </ul>
-    </c:when>
-    <c:otherwise>
-      <p>No state found</p>
-    </c:otherwise>
-  </c:choose>
-  
-  <!-- Delete this Film  -->
+	<!-- display film -->
+	<c:choose>
+		<c:when test="${! empty filmList}">
+			<ul>
+				<c:forEach items="${filmList}" var="film">
+					<li>${film.id}</li>
+					<li>${film.title}</li>
+					<li>${film.description}</li>
+					<li>${film.releaseYear}</li>
+					<li>${film.languageId}</li>
+					<li>${film.rentalDuration}</li>
+					<li>${film.rentalRate}</li>
+					<li>${film.length}</li>
+					<li>${film.replacementCost}</li>
+					<li>${film.rating}</li>
+					<li>${film.language}</li>
+					<li>${film.specialFeatures}</li>
+				</c:forEach>
+			</ul>
+		</c:when>
+		<c:otherwise>
+			<p>No film found</p>
+		</c:otherwise>
+	</c:choose>
 
-	<p>Delete this film<p>
-<form action="DeleteFilm.do" method="GET">
-	
-		<input type="radio" name="deleteFilm" value=${film}/> Delete Film
-		<input type="submit" value="Delete Film" />
+	<!-- Delete this Film  -->
+
+	<p>Delete this film
+	<p>
+	<form action="DeleteFilm.do" method="GET">
+
+		<input type="radio" name="deleteFilm" value=${film } /> Delete Film <input
+			type="submit" value="Delete Film" />
 	</form>
-	
 
-  
-  
-	<!--Update this Film -->
+
+
+
+	<%--<!--Update this Film -->
 	
-	<p>Edit a film<p>
-<form action="UpdateFilm.do" method="GET" >
+	<p>Edit a film<p> 
+<form action="UpdateFilm.do" method="POST" >
 <label for="title"> Change title from ${film.title} to</label> 
 	<input id ="title" type="text" name="title"/> 
 	
@@ -68,7 +69,7 @@
 
 
 
-<label for="langId"> Change description from ${filmAdded.filmlangId} to </label> 
+<label for="langId"> Change description from ${filmAdded.languageId} to </label> 
 	<input id ="langId" type="radio" name="langId" value= 1 required=required/> English
 	<input id ="langId" type="radio" name="langId" value= 2 required=required/> Italian 
 	<input id ="langId" type="radio" name="langId" value= 3 required=required/> Japanese
@@ -98,10 +99,10 @@
 	<input id ="specialFeatures" type="text" name="specialFeatures" required=required/> 
 	
 	<input type="submit" value="Update Film" />
+ --%>
 
 
-  
-  
-  
+
+
 </body>
 </html>

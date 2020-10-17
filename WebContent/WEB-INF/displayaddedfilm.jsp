@@ -128,7 +128,7 @@
 
 
 
-<label for="langId"> Change description from ${filmAdded.filmlangId} to </label> 
+<label for="langId"> Change description from ${filmAdded.languageId} to </label> 
 	<input id ="langId" type="radio" name="langId" value= 1 required=required/> English
 	<input id ="langId" type="radio" name="langId" value= 2 required=required/> Italian 
 	<input id ="langId" type="radio" name="langId" value= 3 required=required/> Japanese

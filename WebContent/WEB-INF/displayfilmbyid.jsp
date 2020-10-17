@@ -16,11 +16,11 @@
   <c:choose>
     <c:when test="${! empty film}">
       <ul>
-       <li>${film.filmId}</li>
+   	    <li>${film.id}</li>
         <li>${film.title}</li>
         <li>${film.description}</li>
         <li>${film.releaseYear}</li>
-        <li>${film.langId}</li>
+        <li>${film.languageId}</li>
         <li>${film.rentalDuration}</li>
         <li>${film.rentalRate}</li>
         <li>${film.length}</li>
@@ -77,7 +77,7 @@
 
 
 
-<label for="langId"> Change description from ${film.filmlangId} to </label> 
+<label for="langId"> Change description from ${film.languageId} to </label> 
 	<input id ="langId" type="radio" name="langId" value= 1 required=required/> English
 	<input id ="langId" type="radio" name="langId" value= 2 required=required/> Italian 
 	<input id ="langId" type="radio" name="langId" value= 3 required=required/> Japanese

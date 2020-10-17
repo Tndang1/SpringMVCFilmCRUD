@@ -26,7 +26,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film filmToAdd = dao.findFilmById(filmID);
 		mv.addObject("film", filmToAdd);
-		mv.setViewName("WEB-INF/displayfilm.jsp");
+		mv.setViewName("WEB-INF/displayfilmbyid.jsp");
 		return mv;
 	}
 	
@@ -39,8 +39,8 @@ public class FilmController {
 	public ModelAndView getFilmByKeyword(String keyword) {
 		ModelAndView mv = new ModelAndView();
 		List<Film> filmReturned = dao.findFilmBySearch(keyword);
-		mv.addObject("film", filmReturned);
-		mv.setViewName("WEB-INF/displayfilm.jsp");
+		mv.addObject("filmList", filmReturned);
+		mv.setViewName("WEB-INF/displayfilmbykeyword.jsp");
 		return mv;
 	}
 

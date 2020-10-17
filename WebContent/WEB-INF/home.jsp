@@ -20,7 +20,7 @@
 <!-- Film By keyword -->
 	<form action="GetFilmByKeyword.do" method="GET">
 	Get Film by Keyword
-		<input type="text" name="filmKeyword"/> 
+		<input type="text" name="keyword"/> 
 		<input type="submit" value="Submit" />
 	</form>
 	
