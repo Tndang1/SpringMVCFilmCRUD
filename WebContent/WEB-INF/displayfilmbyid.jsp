@@ -16,7 +16,7 @@
 	<c:choose>
 		<c:when test="${! empty film}">
 			<ul>
-				<li>${film.id}</li>
+				<%-- <li>${film.id}</li>
 				<li>${film.title}</li>
 				<li>${film.description}</li>
 				<li>${film.releaseYear}</li>
@@ -28,7 +28,8 @@
 				<li>${film.rating}</li>
 				<li>${film.specialFeatures}</li>
 				<li>${film.language}</li>
-				<li>${film.specialFeatures}</li>
+				<li>${film.specialFeatures}</li> --%>
+				<li>${film}</li>
 
 			</ul>
 		</c:when>
@@ -39,11 +40,9 @@
 
 	<!-- Delete this Film  -->
 
-	<p>Delete this film
 	<p>
 	<form action="DeleteFilm.do" method="GET">
-		<input type="radio" name="deleteFilm" value="${film.id}" /> Delete Film.
-		<input type="submit" value="Delete Film" />
+		<button name="deleteFilm" type="submit" value="${film.id}">Delete Film</button>
 	</form>
 
 	<!--Update this Film -->

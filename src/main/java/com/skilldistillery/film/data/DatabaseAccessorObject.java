@@ -29,7 +29,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 	}
 
 	public DatabaseAccessorObject() {
-
+		
 	}
 
 	public Film filmInfoInsert(ResultSet rs) throws SQLException {
@@ -77,7 +77,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 		List<Film> filmList = new ArrayList<Film>();
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
-			String sql = "SELECT film.*, language.name, category.name FROM film JOIN language on film.language_id = language.id right JOIN film_category on film.id =  film_category.film_id JOIN category on film_category.category_id = category.id WHERE film.title LIKE ? OR film.description LIKE ?";
+			String sql = "SELECT film.*, language.name, category.name FROM film LEFT JOIN language on film.language_id = language.id LEFT JOIN film_category on film.id = film_category.film_id LEFT JOIN category on film_category.category_id = category.id WHERE film.title LIKE ? OR film.description LIKE ?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, "%" + search + "%");
 			stmt.setString(2, "%" + search + "%");
@@ -180,7 +180,6 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 
 	@Override
 	public boolean deleteFilm(Film film) {
-		System.out.println(film.getId() + "in deleteFilm method in DAO");
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);

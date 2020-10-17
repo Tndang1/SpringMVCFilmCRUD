@@ -56,7 +56,6 @@ public class FilmController {
 
 	@RequestMapping(path = "DeleteFilm.do", method = RequestMethod.GET)
 	public ModelAndView deleteFilm(int deleteFilm) {
-		System.out.println("***"+deleteFilm);
 		ModelAndView mv = new ModelAndView();
 		boolean filmDeleted = dao.deleteFilm(dao.findFilmById(deleteFilm));
 		mv.addObject("filmDeleted", filmDeleted);

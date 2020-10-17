@@ -20,7 +20,7 @@
 					<li>${film.id}</li>
 					<li>${film.title}</li>
 					<li>${film.description}</li>
-					<li>${film.releaseYear}</li>
+					<%-- <li>${film.releaseYear}</li>
 					<li>${film.languageId}</li>
 					<li>${film.rentalDuration}</li>
 					<li>${film.rentalRate}</li>
@@ -28,7 +28,15 @@
 					<li>${film.replacementCost}</li>
 					<li>${film.rating}</li>
 					<li>${film.language}</li>
-					<li>${film.specialFeatures}</li>
+					<li>${film.specialFeatures}</li> --%>
+
+					<li>
+						<form action="DeleteFilm.do" method="GET">
+						<button name="deleteFilm" type="submit" value="${film.id}">Delete Film</button>
+							<%-- <input type="radio" name="deleteFilm" value=${film } />
+							Delete Film <input type="submit" value="Delete Film" /> --%>
+						</form>
+					</li>
 				</c:forEach>
 			</ul>
 		</c:when>
@@ -39,14 +47,14 @@
 
 	<!-- Delete this Film  -->
 
-	<p>Delete this film
+<%-- 	<p>Delete this film
 	<p>
 	<form action="DeleteFilm.do" method="GET">
 
 		<input type="radio" name="deleteFilm" value=${film } /> Delete Film <input
 			type="submit" value="Delete Film" />
 	</form>
-
+ --%>
 
 
 
