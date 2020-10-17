@@ -1,4 +1,6 @@
-package com.skilldistillery.films.controllers;
+package com.skilldistillery.controllers;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,31 +8,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-//import filmDAO
+import com.skilldistillery.film.data.DatabaseAccessorObject;
+import com.skilldistillery.film.entities.Film;
 
 @Controller
 public class FilmController {
 
 	@Autowired
-	private FilmDAO dao;
+	private DatabaseAccessorObject dao;
 
-	public void setFilmDAO(FilmDAO filmDAO) {
-		this.filmDAO = filmDAO;
+	public void setFilmDAO(DatabaseAccessorObject filmDAO) {
+		this.dao = filmDAO;
 	}
 
 	@RequestMapping(path = "GetFilmId.do", method = RequestMethod.GET)
 	public ModelAndView getFilmId(int filmID) {
 		ModelAndView mv = new ModelAndView();
-		Film filmToAdd = dao.findFilmByID(filmId);
+		Film filmToAdd = dao.findFilmById(filmID);
 		mv.addObject("film", filmToAdd);
 		mv.setViewName("WEB-INF/displayfilm.jsp");
 		return mv;
+	}
+	
+	@RequestMapping(path = "index.do")
+	public String index() {
+		return "WEB-INF/home.jsp";
 	}
 
 	@RequestMapping(path = "GetFilmByKeyword.do", method = RequestMethod.GET)
 	public ModelAndView getFilmByKeyword(String keyword) {
 		ModelAndView mv = new ModelAndView();
-		Film filmReturned = dao.findFilmByID(keyword);
+		List<Film> filmReturned = dao.findFilmBySearch(keyword);
 		mv.addObject("film", filmReturned);
 		mv.setViewName("WEB-INF/displayfilm.jsp");
 		return mv;
@@ -40,7 +48,7 @@ public class FilmController {
 	@RequestMapping(path = "AddFilm.do", method = RequestMethod.GET)
 	public ModelAndView addFilm(Film film) {
 		ModelAndView mv = new ModelAndView();
-		boolean filmAdded = dao.addNewFilm(film);
+		Film filmAdded = dao.createFilm(film);
 		mv.addObject("filmAdded", filmAdded);
 		mv.setViewName("WEB-INF/displayaddedfilm.jsp");
 		return mv;
@@ -58,7 +66,7 @@ public class FilmController {
 	@RequestMapping(path = "UpdateFilm.do", method = RequestMethod.GET)
 	public ModelAndView updateFilm(Film film) {
 		ModelAndView mv = new ModelAndView();
-		boolean filmAdded = dao.updateFilm(film);
+		boolean filmAdded = dao.editFilm(film);
 		mv.addObject("filmAdded", filmAdded);
 		mv.setViewName("WEB-INF/updatedfilm.jsp");
 		return mv;
