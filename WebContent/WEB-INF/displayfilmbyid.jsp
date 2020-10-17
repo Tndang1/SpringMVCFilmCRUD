@@ -58,7 +58,7 @@
   </c:choose>
   
   
-	<!--Update ths Film -->
+	<!--Update this Film -->
 	
 	<p>Edit a film<p>
 <form action="UpdateFilm.do" method="GET" >
