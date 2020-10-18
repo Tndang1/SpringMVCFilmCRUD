@@ -41,18 +41,18 @@
 
 	<!-- Delete this Film  -->
 
-<%-- 	<p>Delete this film
+<p>Delete this film
 	<p>
 	<form action="DeleteFilm.do" method="GET">
 
 		<input type="radio" name="deleteFilm" value=${film } /> Delete Film <input
 			type="submit" value="Delete Film" />
 	</form>
- --%>
 
 
 
-	<%--<!--Update this Film -->
+
+	<!--Update this Film -->
 	
 	<p>Edit a film<p> 
 <form action="UpdateFilm.do" method="POST" >
@@ -101,7 +101,7 @@
 	<input id ="specialFeatures" type="text" name="specialFeatures" required=required/> 
 	
 	<input type="submit" value="Update Film" />
- --%>
+
 
 
 

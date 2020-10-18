@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>Edit a film
+	<%-- <p>Edit a film
 	<p>
 	<form action="UpdateFilm.do" method="GET">
 		<label for="title"> Change title from ${film.title} to</label> <input
@@ -62,7 +62,7 @@
 				<p>Your film was not updated</p>
 			</c:otherwise>
 		</c:choose>
-
+ --%>
 <!-- Confirm Film updated -->
 
 	<c:choose>
@@ -73,6 +73,8 @@
       <p>Your film was not updated</p>
     </c:otherwise>
   </c:choose>
+  
+  <a href = "index.do"> Add another film, etc.</a>
   
   
 </body>

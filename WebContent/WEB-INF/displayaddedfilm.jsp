@@ -50,7 +50,7 @@
   
   <!-- Create new film  -->
   
-  <form action="AddFilm.do" method="GET">
+  <!-- <form action="AddFilm.do" method="GET">
 	Add Another Film to database:
 	
 <br>
@@ -59,7 +59,7 @@
 	<label for="title"> Enter a title</label> 
 	<input id ="title" type="text" name="title"/> 
 	
-	<!-- Language ID already coded in DAO. We may not need any of this. Can use default values  -->
+	Language ID already coded in DAO. We may not need any of this. Can use default values 
 
 	<label for="description"> 
 	<br>
@@ -86,7 +86,7 @@ Enter a Language </label>
 
 
 
-<!-- rental duration?? -->	
+rental duration??	
 <label for="rentalDuration"> 
 <br>
 Enter a rental duration</label> 
@@ -119,7 +119,7 @@ Enter a rental duration</label>
 	<br>
 	<input type="submit" value="Add Film" />
 	</form>
-		
+		 -->
 	
 <!-- Delete this Film  -->
 
