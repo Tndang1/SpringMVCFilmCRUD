@@ -78,7 +78,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		boolean filmUpdated = dao.editFilm(updatedFilm);
 		mv.addObject("filmAdded", filmUpdated);
-		mv.setViewName("WEB-INF/displayaddedfilm.jsp");
+		mv.setViewName("WEB-INF/updatedfilm.jsp");
 		return mv;
 	}
 }
