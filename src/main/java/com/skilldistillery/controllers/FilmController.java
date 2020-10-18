@@ -64,10 +64,14 @@ public class FilmController {
 	}
 
 	@RequestMapping(path = "UpdateFilm.do", method = RequestMethod.GET)
-	public ModelAndView updateFilm(Film film) {
+	public ModelAndView updateFilm(int id, String title, String description, int releaseYear, int languageId, int rentalDuration,
+			double rentalRate, int length, double replacementCost, String rating, String specialFeatures,
+			String language, String category) {
+		Film updatedFilm = new Film(id, title, description, releaseYear, languageId, 
+				rentalDuration, rentalRate, length, replacementCost, rating, specialFeatures, language, category);
 		ModelAndView mv = new ModelAndView();
-		boolean filmAdded = dao.editFilm(film);
-		mv.addObject("filmAdded", filmAdded);
+		boolean filmUpdated = dao.editFilm(updatedFilm);
+		mv.addObject("filmAdded", filmUpdated);
 		mv.setViewName("WEB-INF/updatedfilm.jsp");
 		return mv;
 	}
