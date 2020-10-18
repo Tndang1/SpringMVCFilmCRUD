@@ -17,23 +17,14 @@ public class FilmController {
 	@Autowired
 	private DatabaseAccessorObject dao;
 
-<<<<<<< HEAD:src/main/java/com/skilldistillery/films/controllers/FilmController.java
-	public void setFilmDAO(FilmDAO filmDAO) {
-		this.FilmDAO = filmDAO;
-=======
 	public void setFilmDAO(DatabaseAccessorObject filmDAO) {
 		this.dao = filmDAO;
->>>>>>> 9586caab52d6e0855d9c0aeb27ec4803be6348be:src/main/java/com/skilldistillery/controllers/FilmController.java
 	}
 
 	@RequestMapping(path = "GetFilmId.do", method = RequestMethod.GET)
 	public ModelAndView getFilmId(int filmID) {
 		ModelAndView mv = new ModelAndView();
-<<<<<<< HEAD:src/main/java/com/skilldistillery/films/controllers/FilmController.java
-		Film filmToAdd = dao.findFilmByID(int filmId);
-=======
 		Film filmToAdd = dao.findFilmById(filmID);
->>>>>>> 9586caab52d6e0855d9c0aeb27ec4803be6348be:src/main/java/com/skilldistillery/controllers/FilmController.java
 		mv.addObject("film", filmToAdd);
 		mv.setViewName("WEB-INF/displayfilmbyid.jsp");
 		return mv;
@@ -47,13 +38,8 @@ public class FilmController {
 	@RequestMapping(path = "GetFilmByKeyword.do", method = RequestMethod.GET)
 	public ModelAndView getFilmByKeyword(String keyword) {
 		ModelAndView mv = new ModelAndView();
-<<<<<<< HEAD:src/main/java/com/skilldistillery/films/controllers/FilmController.java
-		Film filmReturned = dao.findFilmByID(keyword);
-		mv.addObject("film", filmReturned);
-=======
 		List<Film> filmReturned = dao.findFilmBySearch(keyword);
 		mv.addObject("filmList", filmReturned);
->>>>>>> 9586caab52d6e0855d9c0aeb27ec4803be6348be:src/main/java/com/skilldistillery/controllers/FilmController.java
 		mv.setViewName("WEB-INF/displayfilmbykeyword.jsp");
 		return mv;
 	}
@@ -84,13 +70,8 @@ public class FilmController {
 		Film updatedFilm = new Film(id, title, description, releaseYear, languageId, 
 				rentalDuration, rentalRate, length, replacementCost, rating, specialFeatures, language, category);
 		ModelAndView mv = new ModelAndView();
-<<<<<<< HEAD:src/main/java/com/skilldistillery/films/controllers/FilmController.java
-		boolean filmUpdated = dao.updateFilm(film);
-		mv.addObject("filmUpdated", filmAdded);
-=======
 		boolean filmUpdated = dao.editFilm(updatedFilm);
 		mv.addObject("filmAdded", filmUpdated);
->>>>>>> 9586caab52d6e0855d9c0aeb27ec4803be6348be:src/main/java/com/skilldistillery/controllers/FilmController.java
 		mv.setViewName("WEB-INF/updatedfilm.jsp");
 		return mv;
 	}

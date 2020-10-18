@@ -189,7 +189,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, film.getId());
 			stmt.executeUpdate();
-			sql = "DELETE FROM film WHERE film.id = ?";
+			sql = "DELETE FROM film WHERE id = ?";
 			stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, film.getId());
 			stmt.executeUpdate();
