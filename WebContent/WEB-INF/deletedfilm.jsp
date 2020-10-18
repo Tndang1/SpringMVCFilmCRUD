@@ -7,12 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Film Deleted</title>
 </head>
 <body>
 <body> 
 
-<!-- CONFIRM FILM ADDED -->
+
+<!-- CONFIRM FILM deleted -->
 	<c:choose>
     <c:when test="${filmDeleted}">
     <p> The film was deleted.<p>
@@ -20,4 +21,4 @@
     <c:otherwise>
       <p>The film was not deleted.</p>
     </c:otherwise>
-  </c:choose>r
+  </c:choose>

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.film.data.DatabaseAccessorObject;
+import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
 @Controller
@@ -25,6 +26,8 @@ public class FilmController {
 	public ModelAndView getFilmId(int filmID) {
 		ModelAndView mv = new ModelAndView();
 		Film filmToAdd = dao.findFilmById(filmID);
+		List<Actor> actors = dao.findActorsByFilmId(filmID);
+		mv.addObject("actors", actors);
 		mv.addObject("film", filmToAdd);
 		mv.setViewName("WEB-INF/displayfilmbyid.jsp");
 		return mv;
@@ -46,9 +49,12 @@ public class FilmController {
 
 
 	@RequestMapping(path = "AddFilm.do", method = RequestMethod.GET)
-	public ModelAndView addFilm(Film film) {
+	public ModelAndView addFilm(Film film, String title, String description, int releaseYear, int languageId, int rentalDuration,
+			double rentalRate, int length, double replacementCost, String rating, String specialFeatures,
+			String language, String category) {
+		Film filmToAdd = new Film(film.getId(), title, description, releaseYear, languageId, rentalDuration, rentalRate, length, replacementCost, rating, specialFeatures, language, category);
 		ModelAndView mv = new ModelAndView();
-		Film filmAdded = dao.createFilm(film);
+		Film filmAdded = dao.createFilm(filmToAdd);
 		mv.addObject("filmAdded", filmAdded);
 		mv.setViewName("WEB-INF/displayaddedfilm.jsp");
 		return mv;
@@ -72,7 +78,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		boolean filmUpdated = dao.editFilm(updatedFilm);
 		mv.addObject("filmAdded", filmUpdated);
-		mv.setViewName("WEB-INF/updatedfilm.jsp");
+		mv.setViewName("WEB-INF/displayaddedfilm.jsp");
 		return mv;
 	}
 }
