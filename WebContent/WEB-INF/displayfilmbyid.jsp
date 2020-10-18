@@ -68,9 +68,14 @@
 			<b><u>$${film.replacementCost}</u></b> to</label> <input id="replacementCost" type="text"
 			name="replacementCost" /> <br> <label for="rating">
 			Change rating from <b><u>${film.rating}</u></b> to</label> <input id="rating" type="text"
-			name="rating" /> <br> <label for="specialFeatures">
-			Change special features from <b><u>${film.specialFeatures}</u></b> to</label> <input
-			id="specialFeatures" type="text" name="specialFeatures" /> <br>
+			name="rating" /> <br> 
+			<label for="specialFeatures">
+			Change special features from <b><u>${film.specialFeatures}</u></b> to</label> 
+			<input id ="specialFeatures" type="radio" name="specialFeatures" value= "trailers" /> Trailers
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "commentaries" /> Commentaries
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "deleted scenes" /> Deleted Scenes
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "behind the scenes" /> Behind the Scenes
+			<br>
 		<input type="submit" value="Update Film" />
 
 	</form>

@@ -223,13 +223,13 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 
 	@Override
 	public boolean editFilm(Film film) {
-		System.out.println(film.getId()+"******");
+		System.out.println(film.getSpecialFeatures()+"******");
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false);
 			String sql = "UPDATE film SET title = ?, description = ?, release_year = ?, language_id = ?,"
-					+ " rental_duration = ?, rental_rate = ?, length = ?, replacement_cost = ?, rating = ?, special_features =?"
+					+ " rental_duration = ?, rental_rate = ?, length = ?, replacement_cost = ?, rating = ?, special_features = ?"
 					+ " WHERE film.id = ?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, film.getTitle());

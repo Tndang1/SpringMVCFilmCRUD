@@ -135,7 +135,7 @@ Enter a rental duration</label>
   
 	<!--Update this Film -->
 	
-	<p>Edit a film<p>
+	<%-- <p>Edit a film<p>
 	
 <form action = "UpdateFilm.do" method = "GET">
 
@@ -182,8 +182,8 @@ Enter a rental duration</label>
 	<input type="submit" value="Update Film" />
 	
 </form>
-
-
+ --%>
+<a href = "index.do"> Find a film or add another film</a>
 
 </body>
 </html>

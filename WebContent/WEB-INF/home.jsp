@@ -94,7 +94,10 @@ Enter a rental duration</label>
 	<label for="specialFeatures"> 
 	<br>
 	Enter a special features</label> 
-	<input id ="specialFeatures" type="text" name="specialFeatures" required=required/> 
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "trailers" /> Trailers
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "commentaries" /> Commentaries
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "deleted scenes" /> Deleted Scenes
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "behind the scenes" /> Behind the Scenes
 	
 	<br>
 	<input type="submit" value="Add Film" />
