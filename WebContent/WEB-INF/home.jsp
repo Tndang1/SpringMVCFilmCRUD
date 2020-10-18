@@ -51,15 +51,15 @@
 
 
 
-<label for="langId"> 
+<label for="languageId"> 
 <br>
 Enter a Language </label> 
-	<input id ="langId" type="radio" name="langId" value= "1" required=required/> English
-	<input id ="langId" type="radio" name="langId" value= "2" required=required/> Italian 
-	<input id ="langId" type="radio" name="langId" value= "3" required=required/> Japanese
-	<input id ="langId" type="radio" name="langId" value= "4" required=required/> Mandarin
-	<input id ="langId" type="radio" name="langId" value= "5" required=required/> French
-	<input id ="langId" type="radio" name="langId" value= "6" required=required/> German
+	<input id ="languageId" type="radio" name="languageId" value= 1 required=required/> English
+	<input id ="languageId" type="radio" name="languageId" value= 2 required=required/> Italian 
+	<input id ="languageId" type="radio" name="languageId" value= 3 required=required/> Japanese
+	<input id ="languageId" type="radio" name="languageId" value= 4 required=required/> Mandarin
+	<input id ="languageId" type="radio" name="languageId" value= 5 required=required/> French
+	<input id ="languageId" type="radio" name="languageId" value= 6 required=required/> German
 
 
 
