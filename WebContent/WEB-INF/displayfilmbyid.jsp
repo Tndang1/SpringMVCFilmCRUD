@@ -14,7 +14,8 @@
 		<c:when test="${! empty film}">
 			<h3>Film Info</h3>
 			<ul>
-				<li>ID# ${film.id} ${film.title}
+				<li>ID# ${film.id} ${film.title} </li>
+				<li>Category: ${film.category}</li>
 				<li>Rated: ${film.rating} : ${film.description}</li>
 				<li>Released: ${film.releaseYear} ${film.language} Length: ${film.length} minutes</li>
 				<li>Rental Duration: ${film.rentalDuration} days Rental Rate: $${film.rentalRate} Replacement Cost $${film.replacementCost}</li>
