@@ -65,6 +65,9 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			if (rs.next()) {
 				film = filmInfoInsert(rs);
 			}
+			rs.close();
+			stmt.close();
+			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -117,7 +120,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 	}
 
 	@Override
-	public List<Actor> findActorsByFilmId(int filmId) {
+	public List<Actor> findActorsByFilmId(int filmID) {
 		List<Actor> actors = new ArrayList<Actor>();
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
@@ -125,7 +128,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 					+ " JOIN film ON film_actor.film_id = film.id" + " WHERE film.id = ?";
 
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setInt(1, filmId);
+			stmt.setInt(1, filmID);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				int actorId = rs.getInt(1);
