@@ -153,8 +153,8 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false);
-			String sql = "INSERT INTO film (title, description, release_year, language_id, rental_duration, rental_rate, length, replacement_cost, rating)"
-			+ " VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO film (title, description, release_year, language_id, rental_duration, rental_rate, length, replacement_cost, rating, special_features)"
+			+ " VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, film.getTitle());
 			stmt.setString(2, film.getDescription());
@@ -165,7 +165,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			stmt.setInt(7, film.getLanguageId());
 			stmt.setDouble(8, film.getReplacementCost());
 			stmt.setString(9, film.getRating());
-//			stmt.setString(10, film.getSpecialFeatures());
+			stmt.setString(10, film.getSpecialFeatures());
 			int updateCount = stmt.executeUpdate();
 			if (updateCount == 1) {
 				ResultSet key = stmt.getGeneratedKeys();
@@ -229,7 +229,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false);
 			String sql = "UPDATE film SET title = ?, description = ?, release_year = ?, language_id = ?,"
-					+ " rental_duration = ?, rental_rate = ?, length = ?, replacement_cost = ?, rating = ?"
+					+ " rental_duration = ?, rental_rate = ?, length = ?, replacement_cost = ?, rating = ?, special_features =?"
 					+ " WHERE film.id = ?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, film.getTitle());
@@ -241,8 +241,8 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			stmt.setInt(7, film.getLanguageId());
 			stmt.setDouble(8, film.getReplacementCost());
 			stmt.setString(9, film.getRating());
-//			stmt.setString(10, film.getSpecialFeatures());
-			stmt.setInt(10, film.getId());
+			stmt.setString(10, film.getSpecialFeatures());
+			stmt.setInt(11, film.getId());
 			stmt.executeUpdate();
 			conn.commit();
 		} catch (SQLException sqle) {

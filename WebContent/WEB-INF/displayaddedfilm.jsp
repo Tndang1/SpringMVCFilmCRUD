@@ -174,7 +174,10 @@ Enter a rental duration</label>
 	<input id ="rating" type="text" name="rating" required=required/> 
 	<br>
 	<label for="specialFeatures"> Change special features from <b><u>${filmAdded.specialFeatures}</u></b> to</label> 
-	<input id ="specialFeatures" type="text" name="specialFeatures" required=required/> 
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "trailers" /> Trailers
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "commentaries" /> Commentaries
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "deleted scenes" /> Deleted Scenes
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "behind the scenes" /> Behind the Scenes
 <br>
 	<input type="submit" value="Update Film" />
 	
