@@ -11,15 +11,18 @@
 <!-- Film By Id -->
 	<form action="GetFilmId.do" method="GET">
 	Get Film by ID
+		<br>
 		<input type="text" name="filmID"/> 
 		<input type="submit" value="Submit" />
 	</form>
+	<br>
 	
 	
 	
 <!-- Film By keyword -->
 	<form action="GetFilmByKeyword.do" method="GET">
 	Get Film by Keyword
+	<br>
 		<input type="text" name="keyword"/> 
 		<input type="submit" value="Submit" />
 	</form>
