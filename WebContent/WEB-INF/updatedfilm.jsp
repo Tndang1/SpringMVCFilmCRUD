@@ -63,5 +63,17 @@
 			</c:otherwise>
 		</c:choose>
 
+<!-- Confirm Film updated -->
+
+	<c:choose>
+    <c:when test="${filmUpdated}">
+    <p> Your film had been updated<p>
+     </c:when>
+    <c:otherwise>
+      <p>Your film was not updated</p>
+    </c:otherwise>
+  </c:choose>
+  
+  
 </body>
 </html>
