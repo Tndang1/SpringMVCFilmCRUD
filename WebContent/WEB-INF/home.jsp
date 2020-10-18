@@ -11,15 +11,18 @@
 <!-- Film By Id -->
 	<form action="GetFilmId.do" method="GET">
 	Get Film by ID
+		<br>
 		<input type="text" name="filmID"/> 
 		<input type="submit" value="Submit" />
 	</form>
+	<br>
 	
 	
 	
 <!-- Film By keyword -->
 	<form action="GetFilmByKeyword.do" method="GET">
 	Get Film by Keyword
+	<br>
 		<input type="text" name="keyword"/> 
 		<input type="submit" value="Submit" />
 	</form>
@@ -31,12 +34,12 @@
 	<form action="AddFilm.do" method="GET">
 	Add Film to Database:
 	<br>
+	<br>
 	
 	<label for="title"> Enter a title</label> 
 	<input id ="title" type="text" name="title"/> 
 	
 	<!-- Language ID already coded in DAO. We may not need any of this. Can use default values  -->
-	<br>
 
 	<label for="description"> 
 	<br>
@@ -93,6 +96,7 @@ Enter a rental duration</label>
 	Enter a special features</label> 
 	<input id ="specialFeatures" type="text" name="specialFeatures" required=required/> 
 	
+	<br>
 	<input type="submit" value="Add Film" />
 	</form>
 	

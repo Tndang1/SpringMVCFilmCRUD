@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -15,22 +12,13 @@
 	<!-- Display  Film  -->
 	<c:choose>
 		<c:when test="${! empty film}">
+			<h3>Film Info</h3>
 			<ul>
-				<%-- <li>${film.id}</li>
-				<li>${film.title}</li>
-				<li>${film.description}</li>
-				<li>${film.releaseYear}</li>
-				<li>${film.languageId}</li>
-				<li>${film.rentalDuration}</li>
-				<li>${film.rentalRate}</li>
-				<li>${film.length}</li>
-				<li>${film.replacementCost}</li>
-				<li>${film.rating}</li>
-				<li>${film.specialFeatures}</li>
-				<li>${film.language}</li>
-				<li>${film.specialFeatures}</li> --%>
-				<li>${film}</li>
-
+				<li>ID# ${film.id} ${film.title}
+				<li>Rated: ${film.rating} : ${film.description}</li>
+				<li>Released: ${film.releaseYear} ${film.language} Length: ${film.length} minutes</li>
+				<li>Rental Duration: ${film.rentalDuration} days Rental Rate: $${film.rentalRate} Replacement Cost $${film.replacementCost}</li>
+				<li>Special Features: ${film.specialFeatures}</li>
 			</ul>
 		</c:when>
 		<c:otherwise>
@@ -42,66 +30,60 @@
 
 	<p>
 	<form action="DeleteFilm.do" method="GET">
-		<button name="deleteFilm" type="submit" value="${film.id}">Delete Film</button>
+		<button name="deleteFilm" type="submit" value="${film.id}">Delete
+			Film</button>
 	</form>
 
 	<!--Update this Film -->
 
-	<p>Edit a film
 	<p>
-<form action = "UpdateFilm.do" method = "GET">
+	<h2>Edit film</h2>
+	<p>
+	<form action="UpdateFilm.do" method="GET">
 
-	<input id="id" type="hidden" name="id" value="${film.id}"/>
-	
-	<label for="title"> Change title from ${film.title} to</label>
-	<input id ="title" type="text" name="title"/> 
-<br>
-	<label for="description"> Change description from ${film.description} to</label> 
-	<input id ="description" type="text" name="description"/> 
-<br>
-	<label for="releaseYear"> Change release year from ${film.releaseYear} to</label> 
-	<input id ="releaseYear" type="text" name="releaseYear"/> 
-<br>
-<label for="languageId"> Change language id from ${film.languageId} to </label> 
-	<input id ="languageId" type="radio" name="languageId" value= 1 /> English
-	<input id ="languageId" type="radio" name="languageId" value= 2 /> Italian 
-	<input id ="languageId" type="radio" name="languageId" value= 3 /> Japanese
-	<input id ="languageId" type="radio" name="languageId" value= 4 /> Mandarin
-	<input id ="languageId" type="radio" name="languageId" value= 5 /> French
-	<input id ="languageId" type="radio" name="languageId" value= 6 /> German
-<br>
-<label for="rentalDuration"> Change rental duration from ${film.rentalDuration} to</label> 
-	<input id ="rentalDuration" type="text" name="rentalDuration" /> 
-	<br>
-	<label for="rentalRate"> Change rental rate from ${film.rentalRate} to</label> 
-	<input id ="rentalRate" type="text" name="rentalRate" /> 
-	<br>
-	<label for="length"> Change length from ${film.length} to</label> 
-	<input id ="length" type="text" name="length" /> 
-	<br>
-	<label for="replacementCost"> Change replacement cost from ${film.replacementCost} to</label> 
-	<input id ="replacementCost" type="text" name="replacementCost" /> 
-	<br>
-	<label for="rating"> Change rating from ${film.rating} to</label> 
-	<input id ="rating" type="text" name="rating" /> 
-	<br>
-	<label for="specialFeatures"> Change special features from ${film.specialFeatures} to</label> 
-	<input id ="specialFeatures" type="text" name="specialFeatures" /> 
-<br>
-	<input type="submit" value="Update Film" />
-	
-</form>
+		<input id="id" type="hidden" name="id" value="${film.id}" /> <label
+			for="title"> Change title from <b><u>${film.title}</b></u> to</label> <input
+			id="title" type="text" name="title" /> <br> <label
+			for="description"> Change description from
+			<b><u>${film.description}</b></u> to</label> <input id="description" type="text"
+			name="description" /> <br> <label for="releaseYear">
+			Change release year from <b><u>${film.releaseYear}</u></b> to</label> <input
+			id="releaseYear" type="text" name="releaseYear" /> <br> <label
+			for="languageId"> Change language from <b><u>${film.language}</u></b>
+			to </label> <input id="languageId" type="radio" name="languageId" value=1 />
+		English <input id="languageId" type="radio" name="languageId" value=2 />
+		Italian <input id="languageId" type="radio" name="languageId" value=3 />
+		Japanese <input id="languageId" type="radio" name="languageId" value=4 />
+		Mandarin <input id="languageId" type="radio" name="languageId" value=5 />
+		French <input id="languageId" type="radio" name="languageId" value=6 />
+		German <br> <label for="rentalDuration"> Change rental
+			duration from <b><u>${film.rentalDuration} days</u></b> to</label> <input id="rentalDuration"
+			type="text" name="rentalDuration" /> <br> <label
+			for="rentalRate"> Change rental rate from <b><u>$${film.rentalRate}</u></b>
+			to</label> <input id="rentalRate" type="text" name="rentalRate" /> <br>
+		<label for="length"> Change length from <b><u>${film.length} minutes</u></b> to</label> <input
+			id="length" type="text" name="length" /> <br> <label
+			for="replacementCost"> Change replacement cost from
+			<b><u>$${film.replacementCost}</u></b> to</label> <input id="replacementCost" type="text"
+			name="replacementCost" /> <br> <label for="rating">
+			Change rating from <b><u>${film.rating}</u></b> to</label> <input id="rating" type="text"
+			name="rating" /> <br> <label for="specialFeatures">
+			Change special features from <b><u>${film.specialFeatures}</u></b> to</label> <input
+			id="specialFeatures" type="text" name="specialFeatures" /> <br>
+		<input type="submit" value="Update Film" />
 
-		<!-- Confirm film updated -->
+	</form>
 
-		<c:choose>
-			<c:when test="${filmUpdated}">
-				<p>Your film had been updated
-				<p>
-			</c:when>
-			<c:otherwise>
-				<p>Your film was not updated</p>
-			</c:otherwise>
-		</c:choose>
+	<!-- Confirm film updated -->
+
+	<c:choose>
+		<c:when test="${filmUpdated}">
+			<p>Your film had been updated
+			<p>
+		</c:when>
+		<c:otherwise>
+			<p>Your film has not been updated</p>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>
