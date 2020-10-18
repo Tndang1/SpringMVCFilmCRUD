@@ -152,8 +152,8 @@ Enter a rental duration</label>
 <br>
 <label for="languageId"> Change language from <b><u>${filmAdded.languageId}</u></b> to </label> 
 	<input id ="languageId" type="radio" name="languageId" value= 1 required=required/> 1-English
-	<input id ="languageId" type="radio" name="languageId" value= 2 required=required/> 2-Japanese
-	<input id ="languageId" type="radio" name="languageId" value= 3 required=required/> 3-Italian
+	<input id ="languageId" type="radio" name="languageId" value= 2 required=required/> 2-Italian
+	<input id ="languageId" type="radio" name="languageId" value= 3 required=required/> 3-Japanese
 	<input id ="languageId" type="radio" name="languageId" value= 4 required=required/> 4-Mandarin
 	<input id ="languageId" type="radio" name="languageId" value= 5 required=required/> 5-French
 	<input id ="languageId" type="radio" name="languageId" value= 6 required=required/> 6-German
