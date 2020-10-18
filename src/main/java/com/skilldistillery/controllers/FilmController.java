@@ -25,9 +25,9 @@ public class FilmController {
 	@RequestMapping(path = "GetFilmId.do", method = RequestMethod.GET)
 	public ModelAndView getFilmId(int filmID) {
 		ModelAndView mv = new ModelAndView();
-		Film filmToAdd = dao.findFilmById(filmID);
 		List<Actor> actors = dao.findActorsByFilmId(filmID);
-		mv.addObject("actors", actors);
+		mv.addObject("actorList", actors);
+		Film filmToAdd = dao.findFilmById(filmID);
 		mv.addObject("film", filmToAdd);
 		mv.setViewName("WEB-INF/displayfilmbyid.jsp");
 		return mv;
