@@ -22,3 +22,9 @@
       <p>The film was not deleted.</p>
     </c:otherwise>
   </c:choose>
+  
+    <a href = "index.do"> Add another film, etc.</a>
+   </body>  
+      </head>
+    </html>
+  

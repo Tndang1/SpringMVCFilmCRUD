@@ -77,7 +77,8 @@ public class FilmController {
 				rentalDuration, rentalRate, length, replacementCost, rating, specialFeatures, language, category);
 		ModelAndView mv = new ModelAndView();
 		boolean filmUpdated = dao.editFilm(updatedFilm);
-		mv.addObject("filmAdded", filmUpdated);
+		mv.addObject("filmUpdated", filmUpdated);
+//		mv.setViewName("WEB-INF/displayaddedfilm.jsp");
 		mv.setViewName("WEB-INF/updatedfilm.jsp");
 		return mv;
 	}

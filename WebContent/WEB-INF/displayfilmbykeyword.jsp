@@ -24,8 +24,8 @@
 				<li>Rental Duration: ${film.rentalDuration} days Rental Rate: $${film.rentalRate} Replacement Cost $${film.replacementCost}</li>
 				<li>Special Features: ${film.specialFeatures}</li>
 					<li>
-						<form action="DeleteFilm.do" method="GET">
-						<button name="deleteFilm" type="submit" value="${film.id}">Delete Film</button>
+						<form action="GetFilmId.do" method="GET">
+						<button name="filmID" type="submit" value="${film.id}">Examine Film</button>
 							<%-- <input type="radio" name="deleteFilm" value=${film } />
 							Delete Film <input type="submit" value="Delete Film" /> --%>
 						</form>
@@ -41,20 +41,20 @@
 
 	<!-- Delete this Film  -->
 
-<%-- 	<p>Delete this film
+<%-- <p>Delete this film
 	<p>
 	<form action="DeleteFilm.do" method="GET">
 
 		<input type="radio" name="deleteFilm" value=${film } /> Delete Film <input
 			type="submit" value="Delete Film" />
 	</form>
+
  --%>
 
 
-
-	<%--<!--Update this Film -->
+	<!--Update this Film -->
 	
-	<p>Edit a film<p> 
+	<%-- <p>Edit a film<p> 
 <form action="UpdateFilm.do" method="POST" >
 <label for="title"> Change title from ${film.title} to</label> 
 	<input id ="title" type="text" name="title"/> 
@@ -101,10 +101,10 @@
 	<input id ="specialFeatures" type="text" name="specialFeatures" required=required/> 
 	
 	<input type="submit" value="Update Film" />
+
+
+
  --%>
-
-
-
 
 </body>
 </html>

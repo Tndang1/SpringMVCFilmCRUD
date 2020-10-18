@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Film by ID</title>
+<title>Film by keyword</title>
 </head>
 <body>
 
@@ -72,17 +72,31 @@
 			for="replacementCost"> Change replacement cost from
 			<b><u>$${film.replacementCost}</u></b> to</label> <input id="replacementCost" type="text"
 			name="replacementCost" /> <br> <label for="rating">
-			Change rating from <b><u>${film.rating}</u></b> to</label> <input id="rating" type="text"
-			name="rating" /> <br> <label for="specialFeatures">
-			Change special features from <b><u>${film.specialFeatures}</u></b> to</label> <input
-			id="specialFeatures" type="text" name="specialFeatures" /> <br>
+			Change rating from <b><u>${film.rating}</u></b> to</label> 
+	<input id ="rating" type="radio" name="rating" value= 1 required=required/> G
+	<input id ="rating" type="radio" name="rating" value= 2 required=required/> PG
+	<input id ="rating" type="radio" name="rating" value= 3 required=required/> PG-13
+	<input id ="rating" type="radio" name="rating" value= 4 required=required/> R
+	<input id ="rating" type="radio" name="rating" value= 5 required=required/> NC-17
+			<!-- <input id="rating" type="text"
+			name="rating" />  -->
+			<br> 
+			
+			
+			<label for="specialFeatures">
+			Change special features from <b><u>${film.specialFeatures}</u></b> to</label> 
+			<input id ="specialFeatures" type="radio" name="specialFeatures" value= "trailers" /> Trailers
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "commentaries" /> Commentaries
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "deleted scenes" /> Deleted Scenes
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "behind the scenes" /> Behind the Scenes
+			<br>
 		<input type="submit" value="Update Film" />
 
 	</form>
 
 	<!-- Confirm film updated -->
 
-	<c:choose>
+	<%-- <c:choose>
 		<c:when test="${filmUpdated}">
 			<p>Your film had been updated
 			<p>
@@ -90,6 +104,6 @@
 		<c:otherwise>
 			<p>Your film has not been updated</p>
 		</c:otherwise>
-	</c:choose>
+	</c:choose> --%>
 </body>
 </html>

@@ -50,7 +50,7 @@
   
   <!-- Create new film  -->
   
-  <form action="AddFilm.do" method="GET">
+  <!-- <form action="AddFilm.do" method="GET">
 	Add Another Film to database:
 	
 <br>
@@ -59,7 +59,7 @@
 	<label for="title"> Enter a title</label> 
 	<input id ="title" type="text" name="title"/> 
 	
-	<!-- Language ID already coded in DAO. We may not need any of this. Can use default values  -->
+	Language ID already coded in DAO. We may not need any of this. Can use default values 
 
 	<label for="description"> 
 	<br>
@@ -86,7 +86,7 @@ Enter a Language </label>
 
 
 
-<!-- rental duration?? -->	
+rental duration??	
 <label for="rentalDuration"> 
 <br>
 Enter a rental duration</label> 
@@ -119,7 +119,7 @@ Enter a rental duration</label>
 	<br>
 	<input type="submit" value="Add Film" />
 	</form>
-		
+		 -->
 	
 <!-- Delete this Film  -->
 
@@ -135,7 +135,7 @@ Enter a rental duration</label>
   
 	<!--Update this Film -->
 	
-	<p>Edit a film<p>
+	<%-- <p>Edit a film<p>
 	
 <form action = "UpdateFilm.do" method = "GET">
 
@@ -174,13 +174,16 @@ Enter a rental duration</label>
 	<input id ="rating" type="text" name="rating" required=required/> 
 	<br>
 	<label for="specialFeatures"> Change special features from <b><u>${filmAdded.specialFeatures}</u></b> to</label> 
-	<input id ="specialFeatures" type="text" name="specialFeatures" required=required/> 
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "trailers" /> Trailers
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "commentaries" /> Commentaries
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "deleted scenes" /> Deleted Scenes
+	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "behind the scenes" /> Behind the Scenes
 <br>
 	<input type="submit" value="Update Film" />
 	
 </form>
-
-
+ --%>
+<a href = "index.do"> Find a film or add another film</a>
 
 </body>
 </html>
