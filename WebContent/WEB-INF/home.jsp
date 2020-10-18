@@ -50,7 +50,7 @@
 	<label for="releaseYear"> 
 	<br>
 	Enter a release year:</label> 
-	<input id ="releaseYear" type="text" name="releaseYear" required=required value ="Please enter a four digit number"/> 
+	<input id ="releaseYear" type="text" name="releaseYear" required=required placeholder = "1990"/> 
 
 
 

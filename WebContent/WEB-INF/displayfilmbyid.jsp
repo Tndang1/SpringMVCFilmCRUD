@@ -54,7 +54,7 @@
 			<b><u>${film.description}</b></u> to</label> <input id="description" type="text"
 			name="description" /> <br> <label for="releaseYear">
 			Change release year from <b><u>${film.releaseYear}</u></b> to</label> <input
-			id="releaseYear" type="text" name="releaseYear" /> <br> <label
+			id="releaseYear" type="text" name="releaseYear" placeholder ="1990"/> <br> <label
 			for="languageId"> Change language from <b><u>${film.language}</u></b>
 			to </label> <input id="languageId" type="radio" name="languageId" value=1 />
 		English <input id="languageId" type="radio" name="languageId" value=2 />

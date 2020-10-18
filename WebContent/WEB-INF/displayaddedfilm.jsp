@@ -16,7 +16,7 @@
 <!-- CONFIRM FILM ADDED -->
 	<c:choose>
     <c:when test="${filmAdded.id > 0}">
-    <p> Your film had been added<p>
+    <p> Your film has been added<p>
     
      </c:when>
     <c:otherwise>
