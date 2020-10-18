@@ -50,7 +50,7 @@
 	<label for="releaseYear"> 
 	<br>
 	Enter a release year:</label> 
-	<input id ="releaseYear" type="text" name="releaseYear" required=required/> 
+	<input id ="releaseYear" type="text" name="releaseYear" required=required value ="Please enter a four digit number"/> 
 
 
 
@@ -88,8 +88,13 @@ Enter a rental duration</label>
 	
 	<label for="rating"> 
 	<br>
-	Enter a rating</label> 
-	<input id ="rating" type="text" name="rating" required=required/> 
+	Enter a Rating </label> 
+	<input id ="rating" type="radio" name="rating" value= 1 required=required/> G
+	<input id ="rating" type="radio" name="rating" value= 2 required=required/> PG
+	<input id ="rating" type="radio" name="rating" value= 3 required=required/> PG-13
+	<input id ="rating" type="radio" name="rating" value= 4 required=required/> R
+	<input id ="rating" type="radio" name="rating" value= 5 required=required/> NC-17
+	
 	
 	<label for="specialFeatures"> 
 	<br>
