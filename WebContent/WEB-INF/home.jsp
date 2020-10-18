@@ -37,8 +37,7 @@
 	
 	<!-- Language ID already coded in DAO. We may not need any of this. Can use default values  -->
 	<br>
-	Can repeat this for all fields or use defaults
-	
+
 	<label for="description"> 
 	<br>
 	Enter a description</label> 
@@ -55,12 +54,12 @@
 <label for="langId"> 
 <br>
 Enter a Language </label> 
-	<input id ="langId" type="radio" name="langId" value= 1 required=required/> English
-	<input id ="langId" type="radio" name="langId" value= 2 required=required/> Italian 
-	<input id ="langId" type="radio" name="langId" value= 3 required=required/> Japanese
-	<input id ="langId" type="radio" name="langId" value= 4 required=required/> Mandarin
-	<input id ="langId" type="radio" name="langId" value= 5 required=required/> French
-	<input id ="langId" type="radio" name="langId" value= 6 required=required/> German
+	<input id ="langId" type="radio" name="langId" value= "1" required=required/> English
+	<input id ="langId" type="radio" name="langId" value= "2" required=required/> Italian 
+	<input id ="langId" type="radio" name="langId" value= "3" required=required/> Japanese
+	<input id ="langId" type="radio" name="langId" value= "4" required=required/> Mandarin
+	<input id ="langId" type="radio" name="langId" value= "5" required=required/> French
+	<input id ="langId" type="radio" name="langId" value= "6" required=required/> German
 
 
 

@@ -152,6 +152,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			String sql = "INSERT INTO film (title, language_id)" + " VALUE (?, 1)";
 			PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, film.getTitle());
+//			stmt.setInt(1, film.getLanguageId());
 			int updateCount = stmt.executeUpdate();
 			if (updateCount == 1) {
 				ResultSet key = stmt.getGeneratedKeys();
@@ -209,6 +210,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 
 	@Override
 	public boolean editFilm(Film film) {
+		System.out.println(film.getId()+"******");
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);

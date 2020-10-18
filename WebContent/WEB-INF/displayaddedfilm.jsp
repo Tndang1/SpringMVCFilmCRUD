@@ -106,7 +106,7 @@
 	<p>Delete this film<p>
 <form action="DeleteFilm.do" method="GET">
 	
-		<input type="radio" name="deleteFilm" value=${filmAdded}/> Delete Film
+		<input type="radio" name="deleteFilm" value="${filmAdded.id}"/> Delete Film
 		<input type="submit" value="Delete Film" />
 	</form>
 	
@@ -116,52 +116,49 @@
 	<!--Update this Film -->
 	
 	<p>Edit a film<p>
-<form action="UpdateFilm.do" method="GET" >
-<label for="title"> Change title from ${filmAdded.title} to</label> 
+	
+<form action = "UpdateFilm.do" method = "GET">
+
+	<input id="id" type="hidden" name="id" value="${film.id}"/>
+	
+	<label for="title"> Change title from ${filmAdded.title} to</label>
 	<input id ="title" type="text" name="title"/> 
-	
-	<!-- Language ID already coded in DAO. We may not need any of this. Can use default values  -->
-	Can repeat this for all fields or use defaults
-	
+<br>
 	<label for="description"> Change description from ${filmAdded.description} to</label> 
 	<input id ="description" type="text" name="description" required=required/> 
-	
-
-	<label for="releaseYear"> Change description from ${filmAdded.releaseYear} to</label> 
+<br>
+	<label for="releaseYear"> Change release year from ${filmAdded.releaseYear} to</label> 
 	<input id ="releaseYear" type="text" name="releaseYear" required=required/> 
-
-
-
-<label for="langId"> Change description from ${filmAdded.languageId} to </label> 
-	<input id ="langId" type="radio" name="langId" value= 1 required=required/> English
-	<input id ="langId" type="radio" name="langId" value= 2 required=required/> Italian 
-	<input id ="langId" type="radio" name="langId" value= 3 required=required/> Japanese
-	<input id ="langId" type="radio" name="langId" value= 4 required=required/> Mandarin
-	<input id ="langId" type="radio" name="langId" value= 5 required=required/> French
-	<input id ="langId" type="radio" name="langId" value= 6 required=required/> German
-
-
-
-<!-- rental duration?? -->	
-<label for="rentalDuration"> Change description from ${filmAdded.rentalDuration} to</label> 
+<br>
+<label for="languageId"> Change language id from ${filmAdded.languageId} to </label> 
+	<input id ="languageId" type="radio" name="languageId" value= 1 required=required/> English
+	<input id ="languageId" type="radio" name="languageId" value= 2 required=required/> Italian 
+	<input id ="languageId" type="radio" name="languageId" value= 3 required=required/> Japanese
+	<input id ="languageId" type="radio" name="languageId" value= 4 required=required/> Mandarin
+	<input id ="languageId" type="radio" name="languageId" value= 5 required=required/> French
+	<input id ="languageId" type="radio" name="languageId" value= 6 required=required/> German
+<br>
+<label for="rentalDuration"> Change rental duration from ${filmAdded.rentalDuration} to</label> 
 	<input id ="rentalDuration" type="text" name="rentalDuration" required=required/> 
-	
-	<label for="rentalRate"> Change description from ${filmAdded.rentalRate} to</label> 
+	<br>
+	<label for="rentalRate"> Change rental rate from ${filmAdded.rentalRate} to</label> 
 	<input id ="rentalRate" type="text" name="rentalRate" required=required/> 
-	
-	<label for="length"> Change description from ${filmAdded.length} to</label> 
+	<br>
+	<label for="length"> Change length from ${filmAdded.length} to</label> 
 	<input id ="length" type="text" name="length" required=required/> 
-	
-	<label for="replacementCost"> Change description from ${filmAdded.replacementCost} to</label> 
+	<br>
+	<label for="replacementCost"> Change replacement cost from ${filmAdded.replacementCost} to</label> 
 	<input id ="replacementCost" type="text" name="replacementCost" required=required/> 
-	
-	<label for="rating"> Change description from ${filmAdded.rating} to</label> 
+	<br>
+	<label for="rating"> Change rating from ${filmAdded.rating} to</label> 
 	<input id ="rating" type="text" name="rating" required=required/> 
-	
-	<label for="specialFeatures"> Change description from ${filmAdded.specialFeatures} to</label> 
+	<br>
+	<label for="specialFeatures"> Change special features from ${filmAdded.specialFeatures} to</label> 
 	<input id ="specialFeatures" type="text" name="specialFeatures" required=required/> 
-	
+<br>
 	<input type="submit" value="Update Film" />
+	
+</form>
 
 
 
