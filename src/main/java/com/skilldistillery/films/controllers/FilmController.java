@@ -15,15 +15,15 @@ public class FilmController {
 	private FilmDAO dao;
 
 	public void setFilmDAO(FilmDAO filmDAO) {
-		this.filmDAO = filmDAO;
+		this.FilmDAO = filmDAO;
 	}
 
 	@RequestMapping(path = "GetFilmId.do", method = RequestMethod.GET)
 	public ModelAndView getFilmId(int filmID) {
 		ModelAndView mv = new ModelAndView();
-		Film filmToAdd = dao.findFilmByID(filmId);
+		Film filmToAdd = dao.findFilmByID(int filmId);
 		mv.addObject("film", filmToAdd);
-		mv.setViewName("WEB-INF/displayfilm.jsp");
+		mv.setViewName("WEB-INF/displayfilmbyid.jsp");
 		return mv;
 	}
 
@@ -32,7 +32,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film filmReturned = dao.findFilmByID(keyword);
 		mv.addObject("film", filmReturned);
-		mv.setViewName("WEB-INF/displayfilm.jsp");
+		mv.setViewName("WEB-INF/displayfilmbykeyword.jsp");
 		return mv;
 	}
 
@@ -58,8 +58,8 @@ public class FilmController {
 	@RequestMapping(path = "UpdateFilm.do", method = RequestMethod.GET)
 	public ModelAndView updateFilm(Film film) {
 		ModelAndView mv = new ModelAndView();
-		boolean filmAdded = dao.updateFilm(film);
-		mv.addObject("filmAdded", filmAdded);
+		boolean filmUpdated = dao.updateFilm(film);
+		mv.addObject("filmUpdated", filmAdded);
 		mv.setViewName("WEB-INF/updatedfilm.jsp");
 		return mv;
 	}

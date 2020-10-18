@@ -8,5 +8,15 @@
 </head>
 <body>
 
+<!--Confirm Delete on Film -->
+	<c:choose>
+    <c:when test="${filmDeleted}">
+    <p> Your film had been deleted<p>
+     </c:when>
+    <c:otherwise>
+      <p>Your film was not deleted</p>
+    </c:otherwise>
+  </c:choose>
+  
 </body>
 </html>

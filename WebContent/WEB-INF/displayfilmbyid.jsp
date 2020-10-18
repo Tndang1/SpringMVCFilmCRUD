@@ -47,18 +47,8 @@
 	</form>
 	
 	
-<!--Confirm Update on Film -->
-	<c:choose>
-    <c:when test="${filmDeleted}">
-    <p> Your film had been deleted<p>
-     </c:when>
-    <c:otherwise>
-      <p>Your film was not deleted</p>
-    </c:otherwise>
-  </c:choose>
-  
-  
-	<!--Update ths Film -->
+
+	<!--Update this Film -->
 	
 	<p>Edit a film<p>
 <form action="UpdateFilm.do" method="GET" >
@@ -108,18 +98,7 @@
 	
 	<input type="submit" value="Update Film" />
 
-	
-<!-- Confirm film updated -->
 
-	<c:choose>
-    <c:when test="${filmUpdated}">
-    <p> Your film had been updated<p>
-     </c:when>
-    <c:otherwise>
-      <p>Your film was not updated</p>
-    </c:otherwise>
-  </c:choose>
-  
   
   
   
