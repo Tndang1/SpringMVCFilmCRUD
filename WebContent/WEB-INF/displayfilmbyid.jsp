@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Film by keyword</title>
+<title>Film by ID</title>
 </head>
 <body>
 
@@ -19,6 +19,11 @@
 				<li>Released: ${film.releaseYear} ${film.language} Length: ${film.length} minutes</li>
 				<li>Rental Duration: ${film.rentalDuration} days Rental Rate: $${film.rentalRate} Replacement Cost $${film.replacementCost}</li>
 				<li>Special Features: ${film.specialFeatures}</li>
+				<li>Featuring: 
+				<c:forEach items="${actorList}" var="actor">
+					*${actor.fullName}*
+				</c:forEach>
+				</li>
 			</ul>
 		</c:when>
 		<c:otherwise>
