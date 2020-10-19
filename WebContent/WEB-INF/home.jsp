@@ -48,7 +48,7 @@
 	<label for="releaseYear"> 
 	<br>
 	Enter a release year:</label> 
-	<input id ="releaseYear" type="number" name="releaseYear" required=required placeholder = "1990"/> 
+	<input id ="releaseYear" type="number" min="1901" max="2155" name="releaseYear" required=required placeholder = "1990"/> 
 
 
 

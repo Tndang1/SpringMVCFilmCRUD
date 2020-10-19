@@ -53,13 +53,13 @@
 		<input id="id" type="hidden" name="id" value="${film.id}" />
 			
 		<label for="title"> Change title from <b><u>${film.title}</u></b> to</label>
-		<input id="title" type="text" name="title" value="${film.title}"/>
+		<input id="title" type="text" name="title" value="${film.title}" required/>
 <br>
 		<label for="description"> Change description from <b><u>${film.description}</u></b> to</label>
-		<input id="description" size="100" type="text" name="description" value="${film.description}"/>
+		<input id="description" size="100" type="text" name="description" value="${film.description}" required/>
 <br>
 		<label for="releaseYear">Change release year from <b><u>${film.releaseYear}</u></b> to</label>
-		<input id="releaseYear" type="number" name="releaseYear" value="${film.releaseYear}"/>
+		<input id="releaseYear" type="number" min="1901" max="2155" name="releaseYear" value="${film.releaseYear}" required/>
 <br>
 		<label for="languageId"> Change language from <b><u>${film.language}</u></b> to </label>
 		<select name="languageId" id="languageId">
@@ -79,16 +79,16 @@
 			<input id="languageId" type="radio" name="languageId" value=6 required="required"/>German -->
 <br>
 		<label for="rentalDuration"> Change rental duration from <b><u>${film.rentalDuration} days</u></b> to</label>
-		<input id="rentalDuration" type="number" name="rentalDuration" value="${film.rentalDuration}"/>
+		<input id="rentalDuration" type="number" name="rentalDuration" value="${film.rentalDuration}" required/>
 <br>
 		<label for="rentalRate"> Change rental rate from <b><u>$${film.rentalRate}</u></b> to</label>
-		<input id="rentalRate" type="number" step="0.01" name="rentalRate" value="${film.rentalRate}"/>
+		<input id="rentalRate" type="number" step="0.01" name="rentalRate" value="${film.rentalRate}" required/>
 <br>
 		<label for="length"> Change length from <b><u>${film.length} minutes</u></b> to</label>
-		<input id="length" type="number" name="length" value="${film.length}"/>
+		<input id="length" type="number" name="length" value="${film.length}" required/>
 <br>
 		<label for="replacementCost"> Change replacement cost from <b><u>$${film.replacementCost}</u></b> to</label>
-		<input id="replacementCost" type="number" step="0.01" name="replacementCost" value="${film.replacementCost}"/>
+		<input id="replacementCost" type="number" step="0.01" name="replacementCost" value="${film.replacementCost}" required/>
 <br>
 		<label for="rating">Change rating from <b><u>${film.rating}</u></b> to</label>
 		<select name="rating" id="rating">
