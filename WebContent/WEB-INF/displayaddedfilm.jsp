@@ -12,7 +12,7 @@
 </head>
 <body>
 <body> 
-
+<a href = "index.do">Return to homepage</a>
 <!-- CONFIRM FILM ADDED -->
 	<c:choose>
     <c:when test="${filmAdded.id > 0}">
@@ -30,7 +30,7 @@
 
 <br>
 <br>
-<a href = "index.do">Return to homepage</a>
+
 
 </body>
 </html>

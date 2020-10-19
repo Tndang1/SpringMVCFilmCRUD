@@ -171,7 +171,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			stmt.setInt(4, film.getLanguageId());
 			stmt.setInt(5, film.getRentalDuration());
 			stmt.setDouble(6, film.getRentalRate());
-			stmt.setInt(7, film.getLanguageId());
+			stmt.setInt(7, film.getLength());
 			stmt.setDouble(8, film.getReplacementCost());
 			stmt.setString(9, film.getRating());
 			stmt.setString(10, film.getSpecialFeatures());
@@ -246,7 +246,7 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 			stmt.setInt(4, film.getLanguageId());
 			stmt.setInt(5, film.getRentalDuration());
 			stmt.setDouble(6, film.getRentalRate());
-			stmt.setInt(7, film.getLanguageId());
+			stmt.setInt(7, film.getLength());
 			stmt.setDouble(8, film.getReplacementCost());
 			stmt.setString(9, film.getRating());
 			stmt.setString(10, film.getSpecialFeatures());

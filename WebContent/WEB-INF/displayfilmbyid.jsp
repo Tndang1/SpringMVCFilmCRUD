@@ -79,16 +79,16 @@
 			<input id="languageId" type="radio" name="languageId" value=6 required="required"/>German -->
 <br>
 		<label for="rentalDuration"> Change rental duration from <b><u>${film.rentalDuration} days</u></b> to</label>
-		<input id="rentalDuration" type="number" name="rentalDuration" value="${film.rentalDuration}" required/>
+		<input id="rentalDuration" type="number" min="0" max="255" name="rentalDuration" value="${film.rentalDuration}" required/>
 <br>
 		<label for="rentalRate"> Change rental rate from <b><u>$${film.rentalRate}</u></b> to</label>
-		<input id="rentalRate" type="number" step="0.01" name="rentalRate" value="${film.rentalRate}" required/>
+		<input id="rentalRate" type="number" min="0" max="99.99" step="0.01" name="rentalRate" value="${film.rentalRate}" required/>
 <br>
 		<label for="length"> Change length from <b><u>${film.length} minutes</u></b> to</label>
-		<input id="length" type="number" name="length" value="${film.length}" required/>
+		<input id="length" type="number" min="0" max="65535" name="length" value="${film.length}" required/>
 <br>
 		<label for="replacementCost"> Change replacement cost from <b><u>$${film.replacementCost}</u></b> to</label>
-		<input id="replacementCost" type="number" step="0.01" name="replacementCost" value="${film.replacementCost}" required/>
+		<input id="replacementCost" type="number" min="0" max="999.99" step="0.01" name="replacementCost" value="${film.replacementCost}" required/>
 <br>
 		<label for="rating">Change rating from <b><u>${film.rating}</u></b> to</label>
 		<select name="rating" id="rating">

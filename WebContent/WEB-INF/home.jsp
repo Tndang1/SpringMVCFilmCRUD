@@ -75,16 +75,16 @@
 <!-- rental duration?? -->	
 <br>
 	<label for="rentalDuration">Enter a rental duration</label> 
-	<input id ="rentalDuration" type="number" name="rentalDuration" required=required/> 
+	<input id ="rentalDuration" type="number" min="0" max="255" name="rentalDuration" required=required/> 
 <br>
 	<label for="rentalRate">Enter a rental rate</label> 
-	<input id ="rentalRate" type="number" step="0.01" name="rentalRate" required=required/> 
+	<input id ="rentalRate" type="number" min="0" max="99.99" step="0.01" name="rentalRate" required=required/> 
 <br>
 	<label for="length"> Enter a length</label> 
-	<input id ="length" type="number" name="length" required=required/> 
+	<input id ="length" type="number" min="0" max="65535" name="length" required=required/> 
 <br>
 	<label for="replacementCost">Enter a replacement cost</label> 
-	<input id ="replacementCost" type="number" step="0.01" name="replacementCost" required=required/> 
+	<input id ="replacementCost" type="number" min="0" max="999.99" step="0.01" name="replacementCost" required=required/> 
 <br>
 	<label for="rating">Enter a Rating </label>
 	<select name="rating" id="rating">
