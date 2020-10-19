@@ -1,14 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Film by keyword</title>
+<meta charset="UTF-8">
+<title>Film Info</title>
 </head>
 <body>
-
+<a href = "index.do">Return to homepage</a>
 	<!-- Display  Film  -->
 	<c:choose>
 		<c:when test="${! empty film}">
@@ -47,16 +50,17 @@
 	<p>
 	<form action="UpdateFilm.do" method="GET">
 
-			<input id="id" type="hidden" name="id" value="${film.id}" />
+		<input id="id" type="hidden" name="id" value="${film.id}" />
+			
 		<label for="title"> Change title from <b><u>${film.title}</u></b> to</label>
-			<input id="title" type="text" name="title" value="${film.title}"/>
-	<br>
+		<input id="title" type="text" name="title" value="${film.title}"/>
+<br>
 		<label for="description"> Change description from <b><u>${film.description}</u></b> to</label>
-			<input id="description" type="text" name="description" value="${film.description}"/>
-	<br>
+		<input id="description" size="100" type="text" name="description" value="${film.description}"/>
+<br>
 		<label for="releaseYear">Change release year from <b><u>${film.releaseYear}</u></b> to</label>
-			<input id="releaseYear" type="text" name="releaseYear" value="${film.releaseYear}"/>
-	<br>
+		<input id="releaseYear" type="number" name="releaseYear" value="${film.releaseYear}"/>
+<br>
 		<label for="languageId"> Change language from <b><u>${film.language}</u></b> to </label>
 		<select name="languageId" id="languageId">
 			<option value="${film.languageId}" selected>${film.language}</option>
@@ -73,19 +77,19 @@
 			<input id="languageId" type="radio" name="languageId" value=4 required="required"/>Mandarin
 			<input id="languageId" type="radio" name="languageId" value=5 required="required"/>French
 			<input id="languageId" type="radio" name="languageId" value=6 required="required"/>German -->
-	<br>
+<br>
 		<label for="rentalDuration"> Change rental duration from <b><u>${film.rentalDuration} days</u></b> to</label>
-			<input id="rentalDuration" type="text" name="rentalDuration" value="${film.rentalDuration}"/>
-	<br>
+		<input id="rentalDuration" type="number" name="rentalDuration" value="${film.rentalDuration}"/>
+<br>
 		<label for="rentalRate"> Change rental rate from <b><u>$${film.rentalRate}</u></b> to</label>
-			<input id="rentalRate" type="text" name="rentalRate" value="${film.rentalRate}"/>
-	<br>
+		<input id="rentalRate" type="number" step="0.01" name="rentalRate" value="${film.rentalRate}"/>
+<br>
 		<label for="length"> Change length from <b><u>${film.length} minutes</u></b> to</label>
-			<input id="length" type="text" name="length" value="${film.length}"/>
-	<br>
+		<input id="length" type="number" name="length" value="${film.length}"/>
+<br>
 		<label for="replacementCost"> Change replacement cost from <b><u>$${film.replacementCost}</u></b> to</label>
-			<input id="replacementCost" type="text" name="replacementCost" value="${film.replacementCost}"/>
-	<br>
+		<input id="replacementCost" type="number" step="0.01" name="replacementCost" value="${film.replacementCost}"/>
+<br>
 		<label for="rating">Change rating from <b><u>${film.rating}</u></b> to</label>
 		<select name="rating" id="rating">
 			<option value="${film.rating}" selected>${film.rating}</option>
@@ -113,6 +117,7 @@
 			<input id ="specialFeatures" type="radio" name="specialFeatures" value= "behind the scenes" /> Behind the Scenes
 	<br>
 			<input type="submit" value="Update Film" />
+			<input type="reset">
 
 	</form>
 

@@ -158,7 +158,6 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 	@Override
 	public Film createFilm(Film film) {
 		Connection conn = null;
-		System.out.println(film.getLanguageId());
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false);
