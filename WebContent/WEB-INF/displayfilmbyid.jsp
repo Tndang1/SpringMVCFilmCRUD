@@ -29,11 +29,11 @@
 				</c:forEach>
 				</li>
 			</ul>
-		</c:when>
+		<%-- </c:when>
 		<c:otherwise>
 			<p>No film found</p>
 		</c:otherwise>
-	</c:choose>
+	</c:choose> --%>
 
 	<!-- Delete this Film  -->
 
@@ -120,6 +120,10 @@
 			<input type="reset">
 
 	</form>
-
+		</c:when>
+		<c:otherwise>
+			<p>No film found</p>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

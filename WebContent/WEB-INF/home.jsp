@@ -12,7 +12,7 @@
 	<form action="GetFilmId.do" method="GET">
 	Get Film by ID
 		<br>
-		<input type="text" name="filmID" required=required/> 
+		<input type="number" min="0" name="filmID" required=required/> 
 		<input type="submit" value="Submit" />
 	</form>
 	<br>
