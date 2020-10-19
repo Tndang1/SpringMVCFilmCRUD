@@ -57,8 +57,11 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 		Film film = null;
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
-			String sql = "SELECT film.*, language.name, category.name FROM film LEFT JOIN language on film.language_id = language.id LEFT JOIN film_category on film.id = film_category.film_id LEFT JOIN category on film_category.category_id = category.id WHERE film.id = ?";
-//			String sql = "SELECT * FROM film LEFT JOIN language ON language.id = film.language_id  LEFT JOIN film_category ON film_category.film_id = film.id LEFT JOIN category ON category.id = film_category.category_id WHERE film.id =?";
+			String sql = "SELECT film.*, language.name, category.name FROM film "
+					+ "LEFT JOIN language on film.language_id = language.id "
+					+ "LEFT JOIN film_category on film.id = film_category.film_id "
+					+ "LEFT JOIN category on film_category.category_id = category.id "
+					+ "WHERE film.id = ?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, filmId);
 			ResultSet rs = stmt.executeQuery();
@@ -80,7 +83,11 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 		List<Film> filmList = new ArrayList<Film>();
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
-			String sql = "SELECT film.*, language.name, category.name FROM film LEFT JOIN language on film.language_id = language.id LEFT JOIN film_category on film.id = film_category.film_id LEFT JOIN category on film_category.category_id = category.id WHERE film.title LIKE ? OR film.description LIKE ?";
+			String sql = "SELECT film.*, language.name, category.name FROM film "
+					+ "LEFT JOIN language on film.language_id = language.id "
+					+ "LEFT JOIN film_category on film.id = film_category.film_id "
+					+ "LEFT JOIN category on film_category.category_id = category.id "
+					+ "WHERE film.title LIKE ? OR film.description LIKE ?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, "%" + search + "%");
 			stmt.setString(2, "%" + search + "%");
@@ -124,8 +131,10 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 		List<Actor> actors = new ArrayList<Actor>();
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
-			String sql = "SELECT * FROM actor" + " JOIN film_actor ON actor.id = film_actor.actor_id"
-					+ " JOIN film ON film_actor.film_id = film.id" + " WHERE film.id = ?";
+			String sql = "SELECT * FROM actor" 
+					+ " JOIN film_actor ON actor.id = film_actor.actor_id"
+					+ " JOIN film ON film_actor.film_id = film.id" 
+					+ " WHERE film.id = ?";
 
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, filmID);
@@ -153,8 +162,9 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false);
-			String sql = "INSERT INTO film (title, description, release_year, language_id, rental_duration, rental_rate, length, replacement_cost, rating, special_features)"
-			+ " VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO film (title, description, release_year, language_id, rental_duration, "
+					+ "rental_rate, length, replacement_cost, rating, special_features)"
+					+ " VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, film.getTitle());
 			stmt.setString(2, film.getDescription());
@@ -223,7 +233,6 @@ public class DatabaseAccessorObject implements DatabaseAccessorInterface {
 
 	@Override
 	public boolean editFilm(Film film) {
-		System.out.println(film.getSpecialFeatures()+"******");
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
