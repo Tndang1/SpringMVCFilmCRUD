@@ -47,63 +47,74 @@
 	<p>
 	<form action="UpdateFilm.do" method="GET">
 
-		<input id="id" type="hidden" name="id" value="${film.id}" /> <label
-			for="title"> Change title from <b><u>${film.title}</b></u> to</label> <input
-			id="title" type="text" name="title" /> <br> <label
-			for="description"> Change description from
-			<b><u>${film.description}</b></u> to</label> <input id="description" type="text"
-			name="description" /> <br> <label for="releaseYear">
-			Change release year from <b><u>${film.releaseYear}</u></b> to</label> <input
-			id="releaseYear" type="text" name="releaseYear" placeholder ="1990"/> <br> <label
-			for="languageId"> Change language from <b><u>${film.language}</u></b>
-			to </label> <input id="languageId" type="radio" name="languageId" value=1 />
-		English <input id="languageId" type="radio" name="languageId" value=2 />
-		Italian <input id="languageId" type="radio" name="languageId" value=3 />
-		Japanese <input id="languageId" type="radio" name="languageId" value=4 />
-		Mandarin <input id="languageId" type="radio" name="languageId" value=5 />
-		French <input id="languageId" type="radio" name="languageId" value=6 />
-		German <br> <label for="rentalDuration"> Change rental
-			duration from <b><u>${film.rentalDuration} days</u></b> to</label> <input id="rentalDuration"
-			type="text" name="rentalDuration" /> <br> <label
-			for="rentalRate"> Change rental rate from <b><u>$${film.rentalRate}</u></b>
-			to</label> <input id="rentalRate" type="text" name="rentalRate" /> <br>
-		<label for="length"> Change length from <b><u>${film.length} minutes</u></b> to</label> <input
-			id="length" type="text" name="length" /> <br> <label
-			for="replacementCost"> Change replacement cost from
-			<b><u>$${film.replacementCost}</u></b> to</label> <input id="replacementCost" type="text"
-			name="replacementCost" /> <br> <label for="rating">
-			Change rating from <b><u>${film.rating}</u></b> to</label> 
-	<input id ="rating" type="radio" name="rating" value= 1 required=required/> G
-	<input id ="rating" type="radio" name="rating" value= 2 required=required/> PG
-	<input id ="rating" type="radio" name="rating" value= 3 required=required/> PG-13
-	<input id ="rating" type="radio" name="rating" value= 4 required=required/> R
-	<input id ="rating" type="radio" name="rating" value= 5 required=required/> NC-17
-			<!-- <input id="rating" type="text"
-			name="rating" />  -->
-			<br> 
+			<input id="id" type="hidden" name="id" value="${film.id}" />
+		<label for="title"> Change title from <b><u>${film.title}</u></b> to</label>
+			<input id="title" type="text" name="title" value="${film.title}"/>
+	<br>
+		<label for="description"> Change description from <b><u>${film.description}</u></b> to</label>
+			<input id="description" type="text" name="description" value="${film.description}"/>
+	<br>
+		<label for="releaseYear">Change release year from <b><u>${film.releaseYear}</u></b> to</label>
+			<input id="releaseYear" type="text" name="releaseYear" value="${film.releaseYear}"/>
+	<br>
+		<label for="languageId"> Change language from <b><u>${film.language}</u></b> to </label>
+		<select name="languageId" id="languageId">
+			<option value="${film.languageId}" selected>${film.language}</option>
+			<option value="1">English</option>
+			<option value="2">Italian</option>
+			<option value="3">Japanese</option>
+			<option value="4">Mandarin</option>
+			<option value="5">French</option>
+			<option value="6">German</option>
+		</select>
+<!-- 			<input id="languageId" type="radio" name="languageId" value=1 required="required"/>English
+			<input id="languageId" type="radio" name="languageId" value=2 required="required"/>Italian
+			<input id="languageId" type="radio" name="languageId" value=3 required="required"/>Japanese
+			<input id="languageId" type="radio" name="languageId" value=4 required="required"/>Mandarin
+			<input id="languageId" type="radio" name="languageId" value=5 required="required"/>French
+			<input id="languageId" type="radio" name="languageId" value=6 required="required"/>German -->
+	<br>
+		<label for="rentalDuration"> Change rental duration from <b><u>${film.rentalDuration} days</u></b> to</label>
+			<input id="rentalDuration" type="text" name="rentalDuration" value="${film.rentalDuration}"/>
+	<br>
+		<label for="rentalRate"> Change rental rate from <b><u>$${film.rentalRate}</u></b> to</label>
+			<input id="rentalRate" type="text" name="rentalRate" value="${film.rentalRate}"/>
+	<br>
+		<label for="length"> Change length from <b><u>${film.length} minutes</u></b> to</label>
+			<input id="length" type="text" name="length" value="${film.length}"/>
+	<br>
+		<label for="replacementCost"> Change replacement cost from <b><u>$${film.replacementCost}</u></b> to</label>
+			<input id="replacementCost" type="text" name="replacementCost" value="${film.replacementCost}"/>
+	<br>
+		<label for="rating">Change rating from <b><u>${film.rating}</u></b> to</label>
+		<select name="rating" id="rating">
+			<option value="${film.rating}" selected>${film.rating}</option>
+			<option value="G">G</option>
+			<option value="PG">PG</option>
+			<option value="PG13">PG-13</option>
+			<option value="R">R</option>
+			<option value="NC17">NC-17</option>
+		</select>
+		
+		
+<!-- 			<input id ="rating" type="radio" name="rating" value= 1 required=required/> G
+			<input id ="rating" type="radio" name="rating" value= 2 required=required/> PG
+			<input id ="rating" type="radio" name="rating" value= 3 required=required/> PG-13
+			<input id ="rating" type="radio" name="rating" value= 4 required=required/> R
+			<input id ="rating" type="radio" name="rating" value= 5 required=required/> NC-17 -->
+	<br> 
 			
 			
-			<label for="specialFeatures">
-			Change special features from <b><u>${film.specialFeatures}</u></b> to</label> 
+		<label for="specialFeatures">Change special features from <b><u>${film.specialFeatures}</u></b> to</label> 
+			<input id ="specialFeatures" type="radio" name="specialFeatures" value= "0" /> None
 			<input id ="specialFeatures" type="radio" name="specialFeatures" value= "trailers" /> Trailers
-	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "commentaries" /> Commentaries
-	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "deleted scenes" /> Deleted Scenes
-	<input id ="specialFeatures" type="radio" name="specialFeatures" value= "behind the scenes" /> Behind the Scenes
-			<br>
-		<input type="submit" value="Update Film" />
+			<input id ="specialFeatures" type="radio" name="specialFeatures" value= "commentaries" /> Commentaries
+			<input id ="specialFeatures" type="radio" name="specialFeatures" value= "deleted scenes" /> Deleted Scenes
+			<input id ="specialFeatures" type="radio" name="specialFeatures" value= "behind the scenes" /> Behind the Scenes
+	<br>
+			<input type="submit" value="Update Film" />
 
 	</form>
 
-	<!-- Confirm film updated -->
-
-	<%-- <c:choose>
-		<c:when test="${filmUpdated}">
-			<p>Your film had been updated
-			<p>
-		</c:when>
-		<c:otherwise>
-			<p>Your film has not been updated</p>
-		</c:otherwise>
-	</c:choose> --%>
 </body>
 </html>

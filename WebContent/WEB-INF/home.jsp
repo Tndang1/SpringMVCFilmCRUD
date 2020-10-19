@@ -54,17 +54,25 @@
 
 
 
-<label for="languageId"> 
 <br>
-Enter a Language </label> 
-	<input id ="languageId" type="radio" name="languageId" value= 1 required=required/> English
+	<label for="languageId">Enter a Language </label>
+
+	<select name="languageId" id="languageId">
+		<option value="1">English</option>
+		<option value="2">Italian</option>
+		<option value="3">Japanese</option>
+		<option value="4">Mandarin</option>
+		<option value="5">French</option>
+		<option value="6">German</option>
+	</select>
+
+
+<!-- 	<input id ="languageId" type="radio" name="languageId" value= 1 required=required/> English
 	<input id ="languageId" type="radio" name="languageId" value= 2 required=required/> Italian 
 	<input id ="languageId" type="radio" name="languageId" value= 3 required=required/> Japanese
 	<input id ="languageId" type="radio" name="languageId" value= 4 required=required/> Mandarin
 	<input id ="languageId" type="radio" name="languageId" value= 5 required=required/> French
-	<input id ="languageId" type="radio" name="languageId" value= 6 required=required/> German
-
-
+	<input id ="languageId" type="radio" name="languageId" value= 6 required=required/> German -->
 
 <!-- rental duration?? -->	
 <label for="rentalDuration"> 
@@ -86,14 +94,24 @@ Enter a rental duration</label>
 	Enter a replacement cost</label> 
 	<input id ="replacementCost" type="text" name="replacementCost" required=required/> 
 	
-	<label for="rating"> 
 	<br>
-	Enter a Rating </label> 
-	<input id ="rating" type="radio" name="rating" value= 1 required=required/> G
+	<label for="rating">Enter a Rating </label>
+	
+	<select name="rating" id="rating">
+		<option value="${film.rating}" selected>${film.rating}</option>
+		<option value="G">G</option>
+		<option value="PG">PG</option>
+		<option value="PG13">PG-13</option>
+		<option value="R">R</option>
+		<option value="NC17">NC-17</option>
+	</select>
+		
+	
+<!-- 	<input id ="rating" type="radio" name="rating" value= 1 required=required/> G
 	<input id ="rating" type="radio" name="rating" value= 2 required=required/> PG
 	<input id ="rating" type="radio" name="rating" value= 3 required=required/> PG-13
 	<input id ="rating" type="radio" name="rating" value= 4 required=required/> R
-	<input id ="rating" type="radio" name="rating" value= 5 required=required/> NC-17
+	<input id ="rating" type="radio" name="rating" value= 5 required=required/> NC-17 -->
 	
 	
 	<label for="specialFeatures"> 
